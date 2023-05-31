@@ -1,4 +1,4 @@
-package arrays.java;
+package arrays.arrayFromPermutation.java;
 
 import java.util.Arrays;
 
