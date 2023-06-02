@@ -12,6 +12,8 @@ package arrays.valueAfterPerformingOperations;
 
     Input: operations = ["--X","X++","X++"]
     Output: 1
+
+    Link: https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
  */
 
 public class ValueAfterPerformOperation {
