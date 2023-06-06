@@ -24,26 +24,20 @@ void main(List<String> args) {
 }
 
 List<int> getLRDifference(List<int> nums) {
-  int k = nums.length;
-  int leftsum = 0;
-  int rightsum = 0;
-  List<int> leftSum = List.filled(k, 0);
-  List<int> rightSum = List.filled(k, 0);
-  List<int> answer = List.filled(k, 0);
-  for (int i = 0; i < k; i++) {
-    leftsum = 0;
-    rightsum = 0;
-    for (int j = 0; j < i; j++) {
-      leftsum += nums[j];
-    }
-    for (int j = i + 1; j < k; j++) {
-      rightsum += nums[j];
-    }
-    leftSum[i] = leftsum;
-    rightSum[i] = rightsum;
+  List<int> answer = List.filled(nums.length, 0);
+  int lSum = 0;
+  int rSum = 0;
+
+  // calculate the total sum
+  for (int i = 0; i < nums.length; i++) {
+    rSum += nums[i];
   }
-  for (int i = 0; i < k; i++) {
-    answer[i] = (leftSum[i] - rightSum[i]).abs();
+
+  for (int i = 0; i < nums.length; i++) {
+    rSum -= nums[i];
+    answer[i] = (rSum - lSum).abs();
+    lSum += nums[i];
   }
+
   return answer;
 }

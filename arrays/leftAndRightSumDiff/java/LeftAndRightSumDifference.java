@@ -29,28 +29,23 @@ public class LeftAndRightSumDifference {
     }
 
     public static int[] getLRDifference(int[] nums) {
-        int k = nums.length;
-        int leftsum = 0;
-        int rightsum = 0;
-        int[] leftSum = new int[k];
-        int[] rightSum = new int[k];
-        int[] answer = new int[k];
-        for (int i = 0; i < k; i++) {
-            leftsum = 0;
-            rightsum = 0;
-            for (int j = 0; j < i; j++) {
-                leftsum += nums[j];
-            }
-            for (int j = i + 1; j < k; j++) {
-                rightsum += nums[j];
-            }
-            leftSum[i] = leftsum;
-            rightSum[i] = rightsum;
+        int[] ans = new int[nums.length];
+        int lSum = 0;
+        int rSum = 0;
+
+        // calculate the total sum of the arrays
+        for (int i = 0; i < nums.length; i++) {
+            rSum += nums[i];
         }
-        for (int i = 0; i < k; i++) {
-            answer[i] = Math.abs(leftSum[i] - rightSum[i]);
+
+        // calculate the absolute difference
+        for (int i = 0; i < ans.length; i++) {
+            rSum -= nums[i]; // remove the current number from right sum
+            ans[i] = Math.abs(lSum - rSum); // calculate the difference
+            lSum += nums[i]; // add the current index number to leftSum
         }
-        return answer;
+
+        return ans;
     }
 
 }
