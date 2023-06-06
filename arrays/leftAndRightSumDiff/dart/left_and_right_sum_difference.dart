@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 ///
 /// Given a 0-indexed integer array nums, find a 0-indexed integer array answer
 /// where:
