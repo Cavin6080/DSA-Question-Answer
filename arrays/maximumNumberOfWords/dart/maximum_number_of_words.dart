@@ -11,6 +11,8 @@ import 'dart:math';
 /// Input: sentences = ["alice and bob love leetcode", "i think so too", "this is
 /// great thanks very much"]
 /// Output: 6
+///
+/// Link: https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/solutions/3577526/direct-approach-beat-100/
 
 void main(List<String> args) {
   List<String> sentences = [
